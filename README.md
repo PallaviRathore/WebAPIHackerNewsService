@@ -35,3 +35,7 @@ Precautions
 ========================
 The API endpoints (https://hacker-news.firebaseio.com/v0/beststories.json and https://hacker-news.firebaseio.com/v0/item/{storyId}.json) are assumed to be accessible.
 The API is configured to run on the default URL https://localhost:5001. You can adjust this in the launchSettings.json or by setting environment variables as needed.
+
+# FutureChanges
+========================
+Would have added ReddisCache or SQL Server Chache if required.
