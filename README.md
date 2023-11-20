@@ -37,5 +37,6 @@ The API endpoints (https://hacker-news.firebaseio.com/v0/beststories.json and ht
 The API is configured to run on the default URL https://localhost:5001. You can adjust this in the launchSettings.json or by setting environment variables as needed.
 
 # FutureChanges
-========================
+
 Would have added ReddisCache or SQL Server Chache if required.
+In a multi-threaded environment, fetching and storing data in the cache could lead to race conditions. We could think about adding lock to ensure that only one instance of the application updates the cache at a time.
