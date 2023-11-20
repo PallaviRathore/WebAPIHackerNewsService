@@ -37,9 +37,7 @@ namespace WebAPIHackerNewsService.Logic
                     var cachedStories = JsonConvert.DeserializeObject<IEnumerable<StoryDetails>>(cachedData);
                     return cachedStories;
                 }
-
-               
-                    // Double-check to avoid fetching data if it has been updated by another thread
+                    
                     cachedData = await _cache.GetStringAsync(cacheKey);
                     if (!string.IsNullOrEmpty(cachedData))
                     {
