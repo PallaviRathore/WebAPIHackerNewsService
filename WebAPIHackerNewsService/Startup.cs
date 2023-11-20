@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Caching.SqlServer;
+using WebAPIHackerNewsService.Logic;
 
 namespace WebAPIHackerNewsService
 {
@@ -16,6 +17,9 @@ namespace WebAPIHackerNewsService
         {
             services.AddHttpClient();
             services.AddControllers();
+            services.AddDistributedMemoryCache();
+            services.AddLogging();
+            services.AddScoped<IHackerNewsService, HackerNewsService>();
 
         }
 
@@ -40,6 +44,7 @@ namespace WebAPIHackerNewsService
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }
