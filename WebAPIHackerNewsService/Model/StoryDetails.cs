@@ -1,12 +1,10 @@
 ﻿
 using System.Text.Json.Serialization;
 
-namespace WebAPIHackerNewsService
+namespace WebAPIHackerNewsService.Model
 {
     public class StoryDetails
     {
-        long time;
-
         [JsonPropertyName("title")]
         public string? Title { get; set; }
 
@@ -22,13 +20,8 @@ namespace WebAPIHackerNewsService
         [JsonPropertyName("descendants")]
         public int CommentCount { get; set; }
 
-       
-        public long Time { get; set; } // Assuming time is represented as Unix timestamp
+        [JsonPropertyName("time")]
+        public long Time { get; set; }
 
-        [JsonPropertyName("time ")]
-        public DateTime TimeText
-        {
-            get { return DateTimeOffset.FromUnixTimeSeconds(Time).UtcDateTime; }
-        }
     }
 }

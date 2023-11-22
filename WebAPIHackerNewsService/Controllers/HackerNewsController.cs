@@ -1,6 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using WebAPIHackerNewsService.Logic;
-
 namespace WebAPIHackerNewsService.Controllers
 {
     [ApiController]
@@ -15,13 +13,13 @@ namespace WebAPIHackerNewsService.Controllers
         }
 
 
-        [HttpGet("best-stories/{n}")]
+        [HttpGet("best-stories/{storyNumber}")]
         [ResponseCache(Duration = 300)] // Cache response for 5 minutes
-        public async Task<IActionResult> GetBestStories(int n)
+        public async Task<IActionResult> GetBestStories(int storyNumber)
         {
             try
             {
-                var bestStories = await _hackerNewsService.GetBestStoriesAsync(n);
+                var bestStories = await _hackerNewsService.GetBestStoriesAsync(storyNumber);
                 return Ok(bestStories);
             }
             catch (Exception ex)

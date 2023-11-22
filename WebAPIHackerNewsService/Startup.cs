@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Caching.SqlServer;
-using WebAPIHackerNewsService.Logic;
+using WebAPIHackerNewsService.Service;
 
 namespace WebAPIHackerNewsService
 {
@@ -20,6 +20,7 @@ namespace WebAPIHackerNewsService
             services.AddDistributedMemoryCache();
             services.AddLogging();
             services.AddScoped<IHackerNewsService, HackerNewsService>();
+            services.AddSwaggerGen();
 
         }
 
@@ -29,6 +30,8 @@ namespace WebAPIHackerNewsService
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
             else
             {
