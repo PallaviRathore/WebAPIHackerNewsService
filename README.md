@@ -13,8 +13,6 @@ dotnet build
 if the build is sucess Run the project using cmd : 
 dotnet run 
 
-The API will be accessible at https://localhost:5095 (or a different URL if configured differently).
-
 else
 
 Open the solution in Visual Studio and click the run button. A new tab with open with swagger document.
